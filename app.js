@@ -2,8 +2,8 @@ import express from 'express';
 import sequelize from '../ProjetoFinalM4/src/database/config.js';
 import corsConfig from './src/config/corsConfig.js';
 import { pacienteRouter } from './src/router/paciente.routes.js';
-import { agendamentoRouter } from './src/routers/agendamento.router.js';
-import { enfermeiroRouter } from './src/routers/enfermeiro.router.js'; 
+import { agendamentoRouter } from './src/router/agendamento.router.js';
+import { enfermeiroRouter } from './src/router/enfermeiro.router.js'; 
 
 const app = express();
 const PORT = process.env.PORT || 3000;

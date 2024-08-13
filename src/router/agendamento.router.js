@@ -1,4 +1,4 @@
-import { getAllAgendamentos, createNewAgendamento, deleteAgendamentoById, updateAgendamentoById } from "../../../src/controllers/agendamento.controller";
+import { getAllAgendamentos, createNewAgendamento, deleteAgendamentoById, updateAgendamentoById } from "../../../src/controllers/agendamento.controller.js";
 import { Router } from "express";
 
 const agendamentoRouter = Router();
