@@ -42,22 +42,23 @@ export const deleteMedicoById = async(req, res) => {
 }
 
 export const updateMedicoById = async (req, res) => {
-    const parametroId = req.params.id; // pegando o id do médico
+    try{
+        const parametroId = req.params.id; // pegando o id do médico
 
-    const dadosAtulizarMedico = req.body; // pegando os dados para atualizar do médico
+        const dadosAtulizarMedico = req.body; // pegando os dados para atualizar do médico
 
-    const medicoAtualizar = await Medico.findByPy(parametroId) // verificando se existe algum médico com aquele id
+        const medicoAtualizar = await Medico.findByPy(parametroId) // verificando se existe algum médico com aquele id
 
-    const medicoAtualizado = await medicoAtualizar.update(dadosAtulizarMedico);
+        const medicoAtualizado = await medicoAtualizar.update(dadosAtulizarMedico);
 
-    res.status(200).send({
-        message: 'Medico atualizado com sucesso',
-        medicoAtualizado,
-    })
-
-
+        res.status(200).send({
+            message: 'Medico atualizado com sucesso',
+            medicoAtualizado,
+        })
+    } catch{
+        res.status(400).send({erro: 'Não foi possivel atualizar o médico'});
+    }
 }
-
 
 export const createNewMedico = async (req, res) => {
     try{
@@ -71,6 +72,6 @@ export const createNewMedico = async (req, res) => {
         });
 
     } catch{
-        res.status(500).send({erro: 'Não foi possivel criar nove médico'})
+        res.status(500).send({erro: 'Não foi possivel criar nove médico'});
     }
 }
