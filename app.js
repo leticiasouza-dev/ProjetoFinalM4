@@ -1,5 +1,5 @@
 import express from 'express';
-import { pacienteRouter } from './src/routers/paciente.routes.js';
+import { pacienteRouter } from '../src/routers/paciente.routes';
 
 
 const app = express();
