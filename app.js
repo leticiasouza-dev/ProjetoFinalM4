@@ -1,5 +1,5 @@
 import express from 'express';
-import sequelize from '../src/database/config.js';
+import sequelize from '../ProjetoFinalM4/src/database/config.js';
 import corsConfig from './src/config/corsConfig.js';
 import { pacienteRouter } from '../src/routers/paciente.routes.js';
 
