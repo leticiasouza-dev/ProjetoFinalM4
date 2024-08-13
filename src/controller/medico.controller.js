@@ -72,6 +72,6 @@ export const createNewMedico = async (req, res) => {
         });
 
     } catch{
-        res.status(500).send({erro: 'Não foi possivel criar nove médico'});
+        res.status(500).send({erro: 'Não foi possivel criar novo médico'});
     }
 }
