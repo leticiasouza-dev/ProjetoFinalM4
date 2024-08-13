@@ -1,17 +1,44 @@
 import { Medico } from "../models/medico.model";
 
 export const getAllMedico = async(req, res) =>{
-    res.status(200).json(Medico);
+    try{
+        const medico = await Medico.findAll() // find all: pegar todos, encontrar todos
+        res.status(200).json(medico);
+    } catch{
+        res.status(400).send({erro:
+            'Médico não encontrado'
+        });
+    }
+}
+
+export const getMedicoById = async(req, res) => {
+    try{
+        const parametroId = req.params.id
+        const medicoEncontrado = await Medico.findByPk(parametroId) //pegar de acordo com o id
+
+        res.status(200).send(medicoEncontrado);
+    } catch{
+        res.status(400).send('Médico não encontrado');
+    }
 }
 
 export const deleteMedicoById = async(req, res) => {
-    let parametroId = req.params.id
+    try{
+        let parametroId = req.params.id
 
-    let medicoDeletar = await Medico.findByPk(parametroId);
+        let medicoDeletar = await Medico.findByPk(parametroId);
 
-    await medicoDeletar.destroy();
+        await medicoDeletar.destroy();
 
-    res.status(200).send('Médico deletado')
+        if(!medicoDeletar){
+            throw new Error('Médico não encontrado');
+        }
+
+        res.status(200).send('Médico deletado')
+
+    } catch{
+        res.status(400).send({erro: "Não foi possível deletar esse médico"})
+    }
 }
 
 export const updateMedicoById = async (req, res) => {
@@ -33,9 +60,17 @@ export const updateMedicoById = async (req, res) => {
 
 
 export const createNewMedico = async (req, res) => {
-    const createNewMedico = req.body;
+    try{
+        const createNewMedico = req.body;
 
-    const medicoCriado = await Medico.create(createNewMedico);
+        const medicoCriado = await Medico.create(createNewMedico);
 
-    res.status(200).send('Medico criado com sucesso');
+        res.status(200).send({
+            message: 'Médico criado com sucesso',
+            novoMedico: medicoCriado
+        });
+
+    } catch{
+        res.status(500).send({erro: 'Não foi possivel criar nove médico'})
+    }
 }
