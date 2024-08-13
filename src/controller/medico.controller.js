@@ -30,3 +30,12 @@ export const updateMedicoById = async (req, res) => {
 
 
 }
+
+
+export const createNewMedico = async (req, res) => {
+    const createNewMedico = req.body;
+
+    const medicoCriado = await Medico.create(createNewMedico);
+
+    res.status(200).send('Medico criado com sucesso');
+}
