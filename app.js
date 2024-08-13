@@ -1,7 +1,7 @@
 import express from 'express';
 import sequelize from '../ProjetoFinalM4/src/database/config.js';
 import corsConfig from './src/config/corsConfig.js';
-import { pacienteRouter } from '../src/routers/paciente.routes.js';
+import { pacienteRouter } from './src/router/paciente.routes.js';
 import { agendamentoRouter } from './src/routers/agendamento.router.js';
 import { enfermeiroRouter } from './src/routers/enfermeiro.router.js'; 
 
