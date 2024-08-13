@@ -10,4 +10,23 @@ export const deleteMedicoById = async(req, res) => {
     let medicoDeletar = await Medico.findByPk(parametroId);
 
     await medicoDeletar.destroy();
+
+    res.status(200).send('Médico deletado')
+}
+
+export const updateMedicoById = async (req, res) => {
+    const parametroId = req.params.id; // pegando o id do médico
+
+    const dadosAtulizarMedico = req.body; // pegando os dados para atualizar do médico
+
+    const medicoAtualizar = await Medico.findByPy(parametroId) // verificando se existe algum médico com aquele id
+
+    const medicoAtualizado = await medicoAtualizar.update(dadosAtulizarMedico);
+
+    res.status(200).send({
+        message: 'Medico atualizado com sucesso',
+        medicoAtualizado,
+    })
+
+
 }
