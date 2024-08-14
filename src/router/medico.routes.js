@@ -11,3 +11,5 @@ medicoRouter.post('medico/new', createNewMedico);
 medicoRouter.delete('medico/delete/:id', deleteMedicoById);
 
 medicoRouter.put('medico/update/:id', updateMedicoById);
+
+export {medicoRouter}
