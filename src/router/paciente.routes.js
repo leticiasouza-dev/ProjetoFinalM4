@@ -1,4 +1,4 @@
-import { getAllPaciente,createNewPaciente,deletePacienteById,updatePacientesById } from "../../../src/controllers/paciente.controller.js";
+import { getAllPaciente,createNewPaciente,deletePacienteById,updatePacientesById } from "../controller/paciente.controllergi";
 import { Router } from "express";
 
 const pacienteRouter = Router();
