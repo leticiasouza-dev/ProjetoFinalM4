@@ -1,4 +1,4 @@
-import { getAllMedico, getMedicoById, createNewMedico, deleteMedicoById, updateMedicoById } from "../controllers/medico.controller.js";
+import { getAllMedico, getMedicoById, createNewMedico, deleteMedicoById, updateMedicoById } from "../controller/medico.controller.js";
 import { Router } from "express";
 
 const medicoRouter = Router();

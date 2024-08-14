@@ -1,4 +1,4 @@
-import { getAllEnfermeiros, createNewEnfermeiro, deleteEnfermeiroById, updateEnfermeiroById } from "../controller/enfermeiro.controller";
+import { getAllEnfermeiros, createNewEnfermeiro, deleteEnfermeiroById, updateEnfermeiroById } from "../controller/enfermeiro.controller.js";
 import { Router } from "express";
 
 const enfermeiroRouter = Router();

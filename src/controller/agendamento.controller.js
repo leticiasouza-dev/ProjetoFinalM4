@@ -1,4 +1,4 @@
-import { Agendamento } from "../model/agendamento.model";
+import { Agendamento } from "../model/agendamento.model.js";
 
 export const getAllAgendamentos = async (req, res) => {
     try {

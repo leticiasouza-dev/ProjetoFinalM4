@@ -1,4 +1,4 @@
-import { Medico } from "../models/medico.model";
+import { Medico } from "../model/medico.model.js";
 
 export const getAllMedico = async(req, res) =>{
     try{
