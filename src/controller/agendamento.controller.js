@@ -1,4 +1,4 @@
-import { Paciente } from "../../../src/models/paciente.model.js";
+import { Agendamento } from "../../../src/models/paciente.model.js";
 
 export const getAllAgendamentos = async (req, res) => {
     try {
