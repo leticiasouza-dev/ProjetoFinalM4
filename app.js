@@ -5,6 +5,9 @@ import { pacienteRouter } from './src/router/paciente.routes.js';
 import { agendamentoRouter } from './src/router/agendamento.routes.js';
 import { enfermeiroRouter } from './src/router/enfermeiro.routes.js'; 
 import { medicoRouter } from './src/router/medico.routes.js';
+import { voluntarioRouter } from './src/router/voluntario.routes.js';
+import { voluntarioSaudeRouter } from './src/router/voluntariosaude.routes.js';
+
 const app = express();
 const PORT = process.env.PORT || 3000;
 app.use(express.json());
@@ -14,6 +17,9 @@ app.use('/api', pacienteRouter);
 app.use('/api', agendamentoRouter);
 app.use('/api', enfermeiroRouter); 
 app.use('/api', medicoRouter);
+app.use('/api', voluntarioRouter);
+app.use('/api', voluntarioSaudeRouter);
+
 sequelize
     .sync()
     .then(() => {

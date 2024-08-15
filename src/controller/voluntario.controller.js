@@ -1,4 +1,4 @@
-import Voluntario from '../models/voluntario.model.js';
+import { Voluntario } from '../model/voluntario.model.js';
 
 export const createVoluntario = async (req, res) => {
   try {

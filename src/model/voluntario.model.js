@@ -1,5 +1,5 @@
-import { DataTypes } from 'sequelize';
-import sequelize from '../database';
+import { DataTypes } from "sequelize";
+import sequelize from "../database/config.js";
 
 const Voluntario = sequelize.define('Voluntario', {
   nome: {
@@ -21,4 +21,4 @@ const Voluntario = sequelize.define('Voluntario', {
   },
 });
 
-export default Voluntario;
+export { Voluntario };
