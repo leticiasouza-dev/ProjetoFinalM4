@@ -2,7 +2,7 @@ import { Medico } from "../model/medico.model.js";
 
 export const getAllMedico = async(req, res) =>{
     try{
-        const medico = await Medico.findAll() // find all: pegar todos, encontrar todos
+        const medico = await Medico.findAll(); // find all: pegar todos, encontrar todos
         res.status(200).json(medico);
     } catch{
         res.status(400).send({erro:

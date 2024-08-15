@@ -6,10 +6,10 @@ const medicoRouter = Router();
 medicoRouter.get('/medico/all', getAllMedico);
 medicoRouter.get('/medico/id', getMedicoById);
 
-medicoRouter.post('medico/new', createNewMedico);
+medicoRouter.post('/medico/new', createNewMedico);
 
-medicoRouter.delete('medico/delete/:id', deleteMedicoById);
+medicoRouter.delete('/medico/delete/:id', deleteMedicoById);
 
-medicoRouter.put('medico/update/:id', updateMedicoById);
+medicoRouter.put('/medico/update/:id', updateMedicoById);
 
 export {medicoRouter}
