@@ -1,12 +1,18 @@
 import express from 'express';
-import {  createVoluntario,  getAllVoluntarios,  getVoluntarioById,  updateVoluntario,  deleteVoluntario,} from '../controller/voluntario.controller.js';
+import { 
+  createVoluntario, 
+  getAllVoluntarios, 
+  getVoluntarioById, 
+  updateVoluntario, 
+  deleteVoluntario 
+} from '../controller/voluntario.controller.js';
 
 const voluntarioRouter = express.Router();
 
-voluntarioRouter.post('/voluntario/new', createVoluntario);
-voluntarioRouter.get('/voluntario/all', getAllVoluntarios);
-voluntarioRouter.get('/voluntario/all:id', getVoluntarioById);
-voluntarioRouter.put('/voluntario/update/:id', updateVoluntario);
-voluntarioRouter.delete('/voluntario/delete/:id', deleteVoluntario);
+voluntarioRouter.post('/voluntario', createVoluntario);
+voluntarioRouter.get('/voluntario', getAllVoluntarios);
+voluntarioRouter.get('/voluntario/:id', getVoluntarioById);
+voluntarioRouter.put('/voluntario/:id', updateVoluntario);
+voluntarioRouter.delete('/voluntario/:id', deleteVoluntario);
 
 export { voluntarioRouter };
