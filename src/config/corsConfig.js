@@ -5,6 +5,7 @@ const corsConfig = {
     callback(null, true); // Permite qualquer origem
   },
     methods: ['GET', 'POST', 'PUT', 'DELETE'], 
+    allowedHeaders: ['Content-Type', 'Authorization'], // Cabeçalhos permitidos
     credentials: true,
     optionsSuccessStatus: 200 
   };
