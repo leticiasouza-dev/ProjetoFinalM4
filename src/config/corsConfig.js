@@ -1,7 +1,9 @@
 import cors from 'cors';
 
 const corsConfig = {
-    origin: '*', 
+  origin: (origin, callback) => {
+    callback(null, true); // Permite qualquer origem
+  },
     methods: ['GET', 'POST', 'PUT', 'DELETE'], 
     credentials: true,
     optionsSuccessStatus: 200 
