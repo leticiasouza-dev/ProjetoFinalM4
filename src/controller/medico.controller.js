@@ -47,7 +47,7 @@ export const updateMedicoById = async (req, res) => {
 
         const dadosAtulizarMedico = req.body; // pegando os dados para atualizar do médico
 
-        const medicoAtualizar = await Medico.findByPy(parametroId) // verificando se existe algum médico com aquele id
+        const medicoAtualizar = await Medico.findByPk(parametroId) // verificando se existe algum médico com aquele id
 
         const medicoAtualizado = await medicoAtualizar.update(dadosAtulizarMedico);
 
