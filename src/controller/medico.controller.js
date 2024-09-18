@@ -22,6 +22,28 @@ export const getMedicoById = async(req, res) => {
     }
 }
 
+export const getMedicoByEmailAndTelefone = async(req, res) => {
+    try{
+        const { email, telefone } = req.query; // Obtém email e telefone dos parâmetros de consulta
+
+        const medico = await Medico.findOne({
+            where: {
+                Email: email,
+                Telefone: telefone
+            }
+        });
+
+        if (!medico) {
+            return res.status(404).json({ message: 'Médico não encontrado' });
+        }
+
+        res.status(200).json(medico);
+    } catch (error) {
+        res.status(500).json({ message: 'Erro ao consultar médico' });
+    }
+};
+
+
 export const deleteMedicoById = async(req, res) => {
     try{
         let parametroId = req.params.id
