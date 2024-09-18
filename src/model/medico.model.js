@@ -18,7 +18,7 @@ export const Medico = sequelize.define('Medico', {
     },
 
     Telefone: {
-        type: DataTypes.INTEGER,
+        type: DataTypes.STRING,
         allowNull: false,
     },
 
