@@ -24,8 +24,9 @@ export const getMedicoById = async(req, res) => {
 
 export const getMedicoByEmailAndTelefone = async(req, res) => {
     try{
-        const { email, telefone } = req.query; // Obtém email e telefone dos parâmetros de consulta
-
+        const email = decodeURIComponent(req.query.email);
+        const telefone = req.query.telefone;
+        
         const medico = await Medico.findOne({
             where: {
                 Email: email,
