@@ -4,7 +4,7 @@ import { Router } from "express";
 const medicoRouter = Router();
 
 medicoRouter.get('/medico/all', getAllMedico);
-medicoRouter.get('/medico/id', getMedicoById);
+medicoRouter.get('/medico/:id', getMedicoById);
 medicoRouter.get('/medico/verificar', getMedicoByEmailAndTelefone);
 
 medicoRouter.post('/medico/new', createNewMedico);
